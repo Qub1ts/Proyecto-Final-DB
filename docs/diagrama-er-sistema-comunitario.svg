@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000">
+  <style>
+    .entity { fill: #e8f4f8; stroke: #2c3e50; stroke-width: 2; }
+    .attribute { fill: #ffffff; stroke: #34495e; stroke-width: 1; }
+    .relationship { fill: #fef9e7; stroke: #f39c12; stroke-width: 2; }
+    .text { font-family: Arial, sans-serif; font-size: 12px; fill: #2c3e50; }
+    .title { font-weight: bold; font-size: 14px; }
+    .line { stroke: #34495e; stroke-width: 1; fill: none; }
+    .pk { font-weight: bold; fill: #e74c3c; }
+  </style>
+
+  <!-- ORGANIZACION -->
+  <rect class="entity" x="50" y="50" width="200" height="30" rx="5"/>
+  <text class="text title" x="150" y="70" text-anchor="middle">ORGANIZACION</text>
+  <rect class="attribute" x="50" y="80" width="200" height="120"/>
+  <text class="text pk" x="60" y="100">id_organizacion (PK)</text>
+  <text class="text" x="60" y="120">nombre</text>
+  <text class="text" x="60" y="140">fecha_fundacion</text>
+  <text class="text" x="60" y="160">tipo_constitucion</text>
+  <text class="text" x="60" y="180">codigo_comportamiento</text>
+
+  <!-- ESPACIO -->
+  <rect class="entity" x="350" y="50" width="200" height="30" rx="5"/>
+  <text class="text title" x="450" y="70" text-anchor="middle">ESPACIO</text>
+  <rect class="attribute" x="350" y="80" width="200" height="120"/>
+  <text class="text pk" x="360" y="100">id_espacio (PK)</text>
+  <text class="text" x="360" y="120">direccion</text>
+  <text class="text" x="360" y="140">tipo_tenencia</text>
+  <text class="text" x="360" y="160">comuna</text>
+  <text class="text" x="360" y="180">capacidad</text>
+
+  <!-- PARTICIPANTE -->
+  <rect class="entity" x="650" y="50" width="200" height="30" rx="5"/>
+  <text class="text title" x="750" y="70" text-anchor="middle">PARTICIPANTE</text>
+  <rect class="attribute" x="650" y="80" width="200" height="140"/>
+  <text class="text pk" x="660" y="100">id_participante (PK)</text>
+  <text class="text" x="660" y="120">nombre_anonimizado</text>
+  <text class="text" x="660" y="140">edad</text>
+  <text class="text" x="660" y="160">genero</text>
+  <text class="text" x="660" y="180">fecha_ingreso</text>
+  <text class="text" x="660" y="200">tipo_participante</text>
+
+  <!-- FORMADOR -->
+  <rect class="entity" x="950" y="50" width="200" height="30" rx="5"/>
+  <text class="text title" x="1050" y="70" text-anchor="middle">FORMADOR</text>
+  <rect class="attribute" x="950" y="80" width="200" height="120"/>
+  <text class="text pk" x="960" y="100">id_formador (PK)</text>
+  <text class="text" x="960" y="120">nombre_anonimizado</text>
+  <text class="text" x="960" y="140">especialidad</text>
+  <text class="text" x="960" y="160">tipo_formador</text>
+  <text class="text" x="960" y="180">anos_experiencia</text>
+
+  <!-- PROYECTO_EDUCATIVO -->
+  <rect class="entity" x="50" y="300" width="250" height="30" rx="5"/>
+  <text class="text title" x="175" y="320" text-anchor="middle">PROYECTO_EDUCATIVO</text>
+  <rect class="attribute" x="50" y="330" width="250" height="180"/>
+  <text class="text pk" x="60" y="350">id_proyecto (PK)</text>
+  <text class="text" x="60" y="370">id_organizacion (FK)</text>
+  <text class="text" x="60" y="390">nombre</text>
+  <text class="text" x="60" y="410">tipo_proyecto</text>
+  <text class="text" x="60" y="430">area_conocimiento</text>
+  <text class="text" x="60" y="450">numero_sesiones</text>
+  <text class="text" x="60" y="470">duracion_sesion_minutos</text>
+  <text class="text" x="60" y="490">fecha_inicio</text>
+
+  <!-- SESION -->
+  <rect class="entity" x="400" y="300" width="200" height="30" rx="5"/>
+  <text class="text title" x="500" y="320" text-anchor="middle">SESION</text>
+  <rect class="attribute" x="400" y="330" width="200" height="160"/>
+  <text class="text pk" x="410" y="350">id_sesion (PK)</text>
+  <text class="text" x="410" y="370">id_proyecto (FK)</text>
+  <text class="text" x="410" y="390">id_espacio (FK)</text>
+  <text class="text" x="410" y="410">numero_sesion</text>
+  <text class="text" x="410" y="430">fecha</text>
+  <text class="text" x="410" y="450">hora_inicio</text>
+  <text class="text" x="410" y="470">duracion_real</text>
+
+  <!-- ASISTENCIA -->
+  <rect class="entity" x="700" y="300" width="200" height="30" rx="5"/>
+  <text class="text title" x="800" y="320" text-anchor="middle">ASISTENCIA</text>
+  <rect class="attribute" x="700" y="330" width="200" height="120"/>
+  <text class="text pk" x="710" y="350">id_asistencia (PK)</text>
+  <text class="text" x="710" y="370">id_sesion (FK)</text>
+  <text class="text" x="710" y="390">id_participante (FK)</text>
+  <text class="text" x="710" y="410">presente</text>
+  <text class="text" x="710" y="430">hora_llegada</text>
+
+  <!-- DOCUMENTACION -->
+  <rect class="entity" x="1000" y="300" width="200" height="30" rx="5"/>
+  <text class="text title" x="1100" y="320" text-anchor="middle">DOCUMENTACION</text>
+  <rect class="attribute" x="1000" y="330" width="200" height="160"/>
+  <text class="text pk" x="1010" y="350">id_documento (PK)</text>
+  <text class="text" x="1010" y="370">id_sesion (FK)</text>
+  <text class="text" x="1010" y="390">tipo_documento</text>
+  <text class="text" x="1010" y="410">tamano_mb</text>
+  <text class="text" x="1010" y="430">licencia</text>
+  <text class="text" x="1010" y="450">url_anonimizada</text>
+  <text class="text" x="1010" y="470">fecha_creacion</text>
+
+  <!-- RETROALIMENTACION -->
+  <rect class="entity" x="50" y="600" width="250" height="30" rx="5"/>
+  <text class="text title" x="175" y="620" text-anchor="middle">RETROALIMENTACION</text>
+  <rect class="attribute" x="50" y="630" width="250" height="140"/>
+  <text class="text pk" x="60" y="650">id_retroalimentacion (PK)</text>
+  <text class="text" x="60" y="670">id_proyecto (FK)</text>
+  <text class="text" x="60" y="690">id_participante (FK)</text>
+  <text class="text" x="60" y="710">calificacion_numerica</text>
+  <text class="text" x="60" y="730">calificacion_cualitativa</text>
+  <text class="text" x="60" y="750">comentarios</text>
+
+  <!-- COLABORACION -->
+  <rect class="entity" x="400" y="600" width="200" height="30" rx="5"/>
+  <text class="text title" x="500" y="620" text-anchor="middle">COLABORACION</text>
+  <rect class="attribute" x="400" y="630" width="200" height="120"/>
+  <text class="text pk" x="410" y="650">id_colaboracion (PK)</text>
+  <text class="text" x="410" y="670">id_organizacion (FK)</text>
+  <text class="text" x="410" y="690">nombre_entidad</text>
+  <text class="text" x="410" y="710">tipo_colaboracion</text>
+  <text class="text" x="410" y="730">fecha_inicio</text>
+
+  <!-- FORMADOR_PROYECTO -->
+  <rect class="entity" x="700" y="600" width="200" height="30" rx="5"/>
+  <text class="text title" x="800" y="620" text-anchor="middle">FORMADOR_PROYECTO</text>
+  <rect class="attribute" x="700" y="630" width="200" height="100"/>
+  <text class="text pk" x="710" y="650">id_formador (FK)</text>
+  <text class="text pk" x="710" y="670">id_proyecto (FK)</text>
+  <text class="text" x="710" y="690">rol</text>
+  <text class="text" x="710" y="710">horas_dedicadas</text>
+
+  <!-- COSTO_PROYECTO -->
+  <rect class="entity" x="1000" y="600" width="200" height="30" rx="5"/>
+  <text class="text title" x="1100" y="620" text-anchor="middle">COSTO_PROYECTO</text>
+  <rect class="attribute" x="1000" y="630" width="200" height="140"/>
+  <text class="text pk" x="1010" y="650">id_costo (PK)</text>
+  <text class="text" x="1010" y="670">id_proyecto (FK)</text>
+  <text class="text" x="1010" y="690">tipo_costo</text>
+  <text class="text" x="1010" y="710">monto</text>
+  <text class="text" x="1010" y="730">descripcion</text>
+  <text class="text" x="1010" y="750">fecha</text>
+
+  <!-- Relaciones -->
+  <line class="line" x1="250" y1="150" x2="350" y2="150"/>
+  <line class="line" x1="150" y1="200" x2="150" y2="300"/>
+  <line class="line" x1="300" y1="400" x2="400" y2="400"/>
+  <line class="line" x1="500" y1="200" x2="500" y2="300"/>
+  <line class="line" x1="600" y1="400" x2="700" y2="400"/>
+  <line class="line" x1="800" y1="220" x2="800" y2="300"/>
+  <line class="line" x1="600" y1="380" x2="1000" y2="380"/>
+  <line class="line" x1="175" y1="510" x2="175" y2="600"/>
+  <line class="line" x1="750" y1="220" x2="750" y2="600"/>
+  <line class="line" x1="175" y1="510" x2="1100" y2="600"/>
+  <line class="line" x1="150" y1="200" x2="500" y2="600"/>
+  <line class="line" x1="175" y1="510" x2="800" y2="600"/>
+  <line class="line" x1="1050" y1="200" x2="800" y2="600"/>
+</svg>
