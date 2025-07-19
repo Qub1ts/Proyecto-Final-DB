@@ -2,6 +2,9 @@
 -- SCRIPT 9: PROCEDIMIENTOS ALMACENADOS ÚTILES
 -- =====================================================
 
+\c organizaciones_comunitarias;
+SET search_path TO comunidad_educativa, public;
+
 -- Procedimiento para calcular estadísticas de un proyecto
 CREATE OR REPLACE FUNCTION calcular_estadisticas_proyecto(p_id_proyecto INTEGER)
 RETURNS TABLE (

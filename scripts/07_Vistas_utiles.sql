@@ -2,6 +2,9 @@
 -- SCRIPT 7: VISTAS ÚTILES
 -- =====================================================
 
+\c organizaciones_comunitarias;
+SET search_path TO comunidad_educativa, public;
+
 -- Vista de resumen de proyectos
 CREATE VIEW v_resumen_proyectos AS
 SELECT 

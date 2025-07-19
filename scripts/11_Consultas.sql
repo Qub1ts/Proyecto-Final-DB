@@ -2,6 +2,9 @@
 -- SCRIPT 8: CONSULTAS SOLICITADAS
 -- =====================================================
 
+\c organizaciones_comunitarias;
+SET search_path TO comunidad_educativa, public;
+
 -- 1. Cantidad de proyectos realizados por organización
 SELECT 
     o.nombre as organizacion,

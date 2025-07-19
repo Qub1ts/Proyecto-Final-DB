@@ -2,6 +2,9 @@
 -- 10 CONSULTAS ADICIONALES PROPUESTAS
 -- =====================================================
 
+\c organizaciones_comunitarias;
+SET search_path TO comunidad_educativa, public;
+
 -- 1. Tasa de retención de participantes por proyecto
 WITH primera_ultima_asistencia AS (
     SELECT 

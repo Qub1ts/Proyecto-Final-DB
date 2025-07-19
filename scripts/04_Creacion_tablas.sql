@@ -58,7 +58,7 @@ CREATE TABLE formador (
     id_formador SERIAL PRIMARY KEY,
     nombre_anonimizado VARCHAR(100) NOT NULL,
     especialidad VARCHAR(200),
-    tipo_formador VARCHAR(50) CHECK (tipo_formador IN ('profesor', 'guia', 'facilitador', 'voluntario')),
+    tipo_formador VARCHAR(50) CHECK (tipo_formador IN ('profesor', 'guia', 'facilitador', 'voluntario', 'técnico')),
     anos_experiencia INTEGER DEFAULT 0,
     activo BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

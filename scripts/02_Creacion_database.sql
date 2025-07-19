@@ -7,8 +7,8 @@ CREATE DATABASE organizaciones_comunitarias
     WITH 
     OWNER = sistema_comunitario_admin
     ENCODING = 'UTF8'
-    LC_COLLATE = 'es_CL.UTF-8'
-    LC_CTYPE = 'es_CL.UTF-8'
+    LC_COLLATE = 'C'
+    LC_CTYPE = 'C'
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1;
 

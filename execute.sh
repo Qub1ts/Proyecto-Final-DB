@@ -1,5 +1,3 @@
-### ejecutar_todo.sh (Linux/Mac)
-```bash
 #!/bin/bash
 # Script para ejecutar todos los scripts SQL en orden
 
@@ -10,7 +8,7 @@ echo "=========================================="
 # Variables
 DB_HOST="localhost"
 DB_PORT="5432"
-SUPERUSER="postgres"
+SUPERUSER="qub1ts"
 
 # Colores para output
 GREEN='\033[0;32m'
@@ -26,9 +24,9 @@ ejecutar_script() {
     echo -e "\n${GREEN}Ejecutando: $script${NC}"
     
     if [ -z "$db" ]; then
-        psql -h $DB_HOST -p $DB_PORT -U $usuario -f $script
+        psql -h "$DB_HOST" -p "$DB_PORT" -U "$usuario" -f "$script"
     else
-        psql -h $DB_HOST -p $DB_PORT -U $usuario -d $db -f $script
+        psql -h "$DB_HOST" -p "$DB_PORT" -U "$usuario" -d "$db" -f "$script"
     fi
     
     if [ $? -eq 0 ]; then
@@ -41,7 +39,7 @@ ejecutar_script() {
 
 # Verificar que PostgreSQL esté corriendo
 echo "Verificando conexión a PostgreSQL..."
-psql -h $DB_HOST -p $DB_PORT -U $SUPERUSER -c "SELECT version();" > /dev/null 2>&1
+psql -h "$DB_HOST" -p "$DB_PORT" -U "$SUPERUSER" -c "SELECT version();" > /dev/null 2>&1
 if [ $? -ne 0 ]; then
     echo -e "${RED}Error: No se puede conectar a PostgreSQL${NC}"
     echo "Asegúrate de que PostgreSQL esté corriendo y puedas acceder como $SUPERUSER"
@@ -51,8 +49,8 @@ fi
 # Ejecutar scripts en orden
 echo -e "\n${GREEN}Iniciando instalación...${NC}"
 
-ejecutar_script "scripts/01_Creacion_roles.sql" $SUPERUSER
-ejecutar_script "scripts/02_Creacion_database.sql" $SUPERUSER
+ejecutar_script "scripts/01_Creacion_roles.sql" "$SUPERUSER"
+ejecutar_script "scripts/02_Creacion_database.sql" "$SUPERUSER"
 ejecutar_script "scripts/03_Creacion_schema.sql" "sistema_comunitario_admin" "organizaciones_comunitarias"
 ejecutar_script "scripts/04_creacion_tablas.sql" "sistema_comunitario_admin" "organizaciones_comunitarias"
 ejecutar_script "scripts/05_creacion_indices.sql" "sistema_comunitario_admin" "organizaciones_comunitarias"

@@ -11,5 +11,5 @@ Base de datos PostgreSQL para gestionar organizaciones comunitarias educativas, 
 
 ### Opción 1: Ejecutar todo automáticamente (Linux/Mac)
 ```bash
-chmod +x ejecutar_todo.sh
-./ejecutar_todo.sh
+chmod +x execute.sh
+./execute.sh
